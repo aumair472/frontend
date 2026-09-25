@@ -1,5 +1,5 @@
 export const SITE_CONFIG = {
-  domain: 'allinkusa.com',
+  domain: 'alllinkusa.com',
   brandName: 'All Link USA',
   shortBrand: 'Link',
   hotline: {
@@ -7,7 +7,7 @@ export const SITE_CONFIG = {
     display: '+1 (888) 316-1334',
     buttonLabel: 'Talk To An Expert'
   },
-  email: 'info@allinkusa.com',
+  email: 'info@alllinkusa.com',
   pricing: {
     amount: '$60/month',
     speed: 'Gig speeds',
