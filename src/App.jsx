@@ -13,10 +13,8 @@ import { FaqSection } from './components/FaqSection';
 import { PrivacySummary } from './components/PrivacySummary';
 import { Footer } from './components/Footer';
 import { ZipModal } from './components/ZipModal';
-import { useBotGuard } from './hooks/useBotGuard';
 
 export function App() {
-  const isAllowed = useBotGuard();
   const [modalState, setModalState] = useState({ isOpen: false, zip: '' });
 
   const handleValidZip = (zip) => {
@@ -26,11 +24,6 @@ export function App() {
   const handleCloseModal = () => {
     setModalState({ isOpen: false, zip: '' });
   };
-
-  // Zero-SEO Barrier: If bot/crawler detected, render empty shell with zero keywords
-  if (!isAllowed) {
-    return null;
-  }
 
   return (
     <>

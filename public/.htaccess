@@ -7,10 +7,6 @@ DirectoryIndex index.html
 <IfModule mod_rewrite.c>
   RewriteEngine On
 
-  # --- Block Search Engine Crawlers & Bots (Zero-SEO / No Keyword Scraping) -
-  RewriteCond %{HTTP_USER_AGENT} (googlebot|bingbot|baiduspider|yandex|slurp|duckduckbot|facebookexternalhit|twitterbot|rogerbot|linkedinbot|embedly|quora|outbrain|pinterest|slackbot|vkShare|W3C_Validator|semrush|ahrefs|mj12bot|dotbot|bytespider) [NC]
-  RewriteRule .* - [F,L]
-
   # --- Canonical host: force HTTPS -----------------------------------------
   RewriteCond %{HTTPS} !=on
   RewriteCond %{HTTP:X-Forwarded-Proto} !https
@@ -22,7 +18,7 @@ DirectoryIndex index.html
   RewriteRule . /index.html [L]
 </IfModule>
 
-# --- Security & Anti-Crawler headers ---------------------------------------
+# --- Security & noindex headers ---------------------------------------------
 <IfModule mod_headers.c>
   Header set X-Content-Type-Options "nosniff"
   Header set Referrer-Policy "strict-origin-when-cross-origin"
